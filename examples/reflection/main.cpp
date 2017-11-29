@@ -33,7 +33,7 @@ int test_reflection() {
 	std::cout << "==================================" << std::endl;
 	std::cout << "[Class]:" << dage::meta_class<person>::name() << std::endl;
 	
-	auto& fields = dage::meta_class<person>::indexs();
+	auto fields = dage::meta_class<person>::indexs();
 	std::cout << "[Fields]:|";
 	std::for_each(fields.begin(), fields.end(), [](decltype(fields[0]) v){ std::cout << v << "|"; });
 	std::cout << std::endl;
