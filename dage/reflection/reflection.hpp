@@ -27,10 +27,9 @@ namespace dage {
 //			int id;
 //			std::string name;
 //			int age;
-//			school s;
 //			USING_REFLECTION
 //		};
-//		REFLECTION(person, id, name, age, s);
+//		REFLECTION(person, id, name, age);
 //
 //
 // * How to use (you can use any iostream class from stl; or you can implement another stream, learn from 'stream.hpp')
