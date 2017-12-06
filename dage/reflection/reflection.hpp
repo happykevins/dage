@@ -243,8 +243,8 @@ namespace dage {
 template<typename T=void>
 struct meta_class {
 	inline static const char* name() {return "NULL";}
-	inline static decltype(auto) indexs() {return nullptr;}
-	inline static decltype(auto) members() {return nullptr;}
+	inline static auto indexs()->decltype(nullptr) {return nullptr;}
+	inline static auto members()->decltype(nullptr) {return nullptr;}
 };
 
 #define REFLECTION_IMPL(STRUCT_NAME, _N, TUP, STR_LIST) \
@@ -327,6 +327,15 @@ struct TupleExpand<Tup, I,
 	std::cout<< "[" << meta_class<T>::name() << "." << meta_class<T>::indexs()[idx] << "]<" \
 		<< typeid(decltype(obj.*ele)).name() << ">=" << obj.*ele << std::endl; 
 
+template<typename T, typename S>
+struct TsBase; 
+
+template<typename T, typename S>
+struct OutTsBase;
+
+template<typename T, typename S, typename OP=OutTsBase<T,S> >
+struct BridgeOStreamTs;
+
 // base for F
 template<typename T, typename S>
 struct TsBase {
@@ -364,9 +373,9 @@ struct TsBase {
 		std::cout<< "[" << meta_class<T>::name() << "." << meta_class<T>::indexs()[idx] << "]<" \
 			<< typeid(decltype(obj.*ele)).name() << "><=====Class Type=====>" << std::endl; 	
 
-		auto& o = typename obj.*ele;
-		auto& ts = BridgeOStreamTs<std::remove_reference<decltype(o)>::type, S>(o, stream);
-		auto mbs = meta_class<std::remove_reference<decltype(o)>::type>::members();
+		auto& o = obj.*ele;
+		auto ts = BridgeOStreamTs<typename std::remove_reference<decltype(o)>::type, S>(o, stream);
+		auto mbs = meta_class<typename std::remove_reference<decltype(o)>::type>::members();
 		TupleExpand<decltype(mbs)>::apply_imp(mbs, ts);
 	}
 
@@ -377,41 +386,41 @@ struct TsBase {
 
 template<typename T, typename S>
 struct OutTsBase : TsBase<T,S> {
-	OutTsBase(T& _t, S& _s) : TsBase(_t, _s) {}
+	OutTsBase(T& _t, S& _s) : TsBase<T,S>(_t, _s) {}
 };
 
 template<typename T, typename S>
 struct InTsBase : TsBase<T,S> {
-	InTsBase(T& _t, S& _s) : TsBase(_t, _s) {}
+	InTsBase(T& _t, S& _s) : TsBase<T,S>(_t, _s) {}
 };
 
 // Tuples Traversal for Bridge (桥接支持100个参数)
-template<typename T, typename S, typename OP=OutTsBase<T,S> >
+template<typename T, typename S, typename OP>
 struct BridgeOStreamTs : TsBase<T, S> {
 	template <typename TUP>
 	inline void operator()(TUP&& tup, size_t idx) {
-		TupleExpand<std::remove_reference<TUP>::type>::apply_imp(tup, OP(obj, stream));
+		TupleExpand<typename std::remove_reference<TUP>::type>::apply_imp(tup, OP(this->obj, this->stream));
 	}
-	BridgeOStreamTs(T& _obj, S& _stream) :TsBase(_obj, _stream){}
+	BridgeOStreamTs(T& _obj, S& _stream) :TsBase<T,S>(_obj, _stream){}
 };
 template<typename T, typename S, typename OP=InTsBase<T,S> >
 struct BridgeIStreamTs : TsBase<T, S> {
 	template <typename TUP>
 	inline void operator()(TUP&& tup, size_t idx) {
-		TupleExpand<std::remove_reference<TUP>::type>::apply_imp(tup, OP(obj, stream));
+		TupleExpand<typename std::remove_reference<TUP>::type>::apply_imp(tup, OP(this->obj, this->stream));
 	}
-	BridgeIStreamTs(T& _obj, S& _stream) :TsBase(_obj, _stream){}
+	BridgeIStreamTs(T& _obj, S& _stream) :TsBase<T,S>(_obj, _stream){}
 };
 
 #define OSTREAM_BRIDGE(_BridgeName, _StreamName) \
 	template<typename T, typename S> \
 	struct _BridgeName : BridgeOStreamTs<T, S, _StreamName<T,S> > { \
-		_BridgeName(T& _t, S& _s) : BridgeOStreamTs(_t, _s) {}};
+		_BridgeName(T& _t, S& _s) : BridgeOStreamTs<T,S, _StreamName<T,S> >(_t, _s) {}};
 
 #define ISTREAM_BRIDGE(_BridgeName, _StreamName) \
 	template<typename T, typename S> \
 	struct _BridgeName : BridgeIStreamTs<T, S, _StreamName<T,S> > { \
-		_BridgeName(T& _t, S& _s) : BridgeIStreamTs(_t, _s) {}};
+		_BridgeName(T& _t, S& _s) : BridgeIStreamTs<T,S, _StreamName<T,S> >(_t, _s) {}};
 
 }; // namespace dage
 
