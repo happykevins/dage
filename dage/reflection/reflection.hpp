@@ -212,6 +212,114 @@ namespace dage {
 
 #define MAKE_TUPLE_ARG(_S, _A) (&_S::_A)
 
+#define MAKE_N10_TUPLE(_S, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, ...) \
+	std::make_tuple( \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _1), MAKE_TUPLE_ARG(_S, _2), MAKE_TUPLE_ARG(_S, _3), MAKE_TUPLE_ARG(_S, _4), MAKE_TUPLE_ARG(_S, _5), MAKE_TUPLE_ARG(_S, _6), MAKE_TUPLE_ARG(_S, _7), MAKE_TUPLE_ARG(_S, _8), MAKE_TUPLE_ARG(_S, _9), MAKE_TUPLE_ARG(_S, _10)) )
+
+#define MAKE_N20_TUPLE(_S, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, \
+	_11, _12, _13, _14, _15, _16, _17, _18, _19, _20, ...) \
+	std::make_tuple( \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _1), MAKE_TUPLE_ARG(_S, _2), MAKE_TUPLE_ARG(_S, _3), MAKE_TUPLE_ARG(_S, _4), MAKE_TUPLE_ARG(_S, _5), MAKE_TUPLE_ARG(_S, _6), MAKE_TUPLE_ARG(_S, _7), MAKE_TUPLE_ARG(_S, _8), MAKE_TUPLE_ARG(_S, _9), MAKE_TUPLE_ARG(_S, _10)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _11), MAKE_TUPLE_ARG(_S, _12), MAKE_TUPLE_ARG(_S, _13), MAKE_TUPLE_ARG(_S, _14), MAKE_TUPLE_ARG(_S, _15), MAKE_TUPLE_ARG(_S, _16), MAKE_TUPLE_ARG(_S, _17), MAKE_TUPLE_ARG(_S, _18), MAKE_TUPLE_ARG(_S, _19), MAKE_TUPLE_ARG(_S, _20)) )
+
+#define MAKE_N30_TUPLE(_S, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, \
+	_11, _12, _13, _14, _15, _16, _17, _18, _19, _20, \
+	_21, _22, _23, _24, _25, _26, _27, _28, _29, _30, ...) \
+	std::make_tuple( \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _1), MAKE_TUPLE_ARG(_S, _2), MAKE_TUPLE_ARG(_S, _3), MAKE_TUPLE_ARG(_S, _4), MAKE_TUPLE_ARG(_S, _5), MAKE_TUPLE_ARG(_S, _6), MAKE_TUPLE_ARG(_S, _7), MAKE_TUPLE_ARG(_S, _8), MAKE_TUPLE_ARG(_S, _9), MAKE_TUPLE_ARG(_S, _10)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _11), MAKE_TUPLE_ARG(_S, _12), MAKE_TUPLE_ARG(_S, _13), MAKE_TUPLE_ARG(_S, _14), MAKE_TUPLE_ARG(_S, _15), MAKE_TUPLE_ARG(_S, _16), MAKE_TUPLE_ARG(_S, _17), MAKE_TUPLE_ARG(_S, _18), MAKE_TUPLE_ARG(_S, _19), MAKE_TUPLE_ARG(_S, _20)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _21), MAKE_TUPLE_ARG(_S, _22), MAKE_TUPLE_ARG(_S, _23), MAKE_TUPLE_ARG(_S, _24), MAKE_TUPLE_ARG(_S, _25), MAKE_TUPLE_ARG(_S, _26), MAKE_TUPLE_ARG(_S, _27), MAKE_TUPLE_ARG(_S, _28), MAKE_TUPLE_ARG(_S, _29), MAKE_TUPLE_ARG(_S, _30)) )
+
+#define MAKE_N40_TUPLE(_S, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, \
+	_11, _12, _13, _14, _15, _16, _17, _18, _19, _20, \
+	_21, _22, _23, _24, _25, _26, _27, _28, _29, _30, \
+	_31, _32, _33, _34, _35, _36, _37, _38, _39, _40, ...) \
+	std::make_tuple( \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _1), MAKE_TUPLE_ARG(_S, _2), MAKE_TUPLE_ARG(_S, _3), MAKE_TUPLE_ARG(_S, _4), MAKE_TUPLE_ARG(_S, _5), MAKE_TUPLE_ARG(_S, _6), MAKE_TUPLE_ARG(_S, _7), MAKE_TUPLE_ARG(_S, _8), MAKE_TUPLE_ARG(_S, _9), MAKE_TUPLE_ARG(_S, _10)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _11), MAKE_TUPLE_ARG(_S, _12), MAKE_TUPLE_ARG(_S, _13), MAKE_TUPLE_ARG(_S, _14), MAKE_TUPLE_ARG(_S, _15), MAKE_TUPLE_ARG(_S, _16), MAKE_TUPLE_ARG(_S, _17), MAKE_TUPLE_ARG(_S, _18), MAKE_TUPLE_ARG(_S, _19), MAKE_TUPLE_ARG(_S, _20)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _21), MAKE_TUPLE_ARG(_S, _22), MAKE_TUPLE_ARG(_S, _23), MAKE_TUPLE_ARG(_S, _24), MAKE_TUPLE_ARG(_S, _25), MAKE_TUPLE_ARG(_S, _26), MAKE_TUPLE_ARG(_S, _27), MAKE_TUPLE_ARG(_S, _28), MAKE_TUPLE_ARG(_S, _29), MAKE_TUPLE_ARG(_S, _30)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _31), MAKE_TUPLE_ARG(_S, _32), MAKE_TUPLE_ARG(_S, _33), MAKE_TUPLE_ARG(_S, _34), MAKE_TUPLE_ARG(_S, _35), MAKE_TUPLE_ARG(_S, _36), MAKE_TUPLE_ARG(_S, _37), MAKE_TUPLE_ARG(_S, _38), MAKE_TUPLE_ARG(_S, _39), MAKE_TUPLE_ARG(_S, _40)) )
+
+#define MAKE_N50_TUPLE(_S, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, \
+	_11, _12, _13, _14, _15, _16, _17, _18, _19, _20, \
+	_21, _22, _23, _24, _25, _26, _27, _28, _29, _30, \
+	_31, _32, _33, _34, _35, _36, _37, _38, _39, _40, \
+	_41, _42, _43, _44, _45, _46, _47, _48, _49, _50, ...) \
+	std::make_tuple( \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _1), MAKE_TUPLE_ARG(_S, _2), MAKE_TUPLE_ARG(_S, _3), MAKE_TUPLE_ARG(_S, _4), MAKE_TUPLE_ARG(_S, _5), MAKE_TUPLE_ARG(_S, _6), MAKE_TUPLE_ARG(_S, _7), MAKE_TUPLE_ARG(_S, _8), MAKE_TUPLE_ARG(_S, _9), MAKE_TUPLE_ARG(_S, _10)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _11), MAKE_TUPLE_ARG(_S, _12), MAKE_TUPLE_ARG(_S, _13), MAKE_TUPLE_ARG(_S, _14), MAKE_TUPLE_ARG(_S, _15), MAKE_TUPLE_ARG(_S, _16), MAKE_TUPLE_ARG(_S, _17), MAKE_TUPLE_ARG(_S, _18), MAKE_TUPLE_ARG(_S, _19), MAKE_TUPLE_ARG(_S, _20)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _21), MAKE_TUPLE_ARG(_S, _22), MAKE_TUPLE_ARG(_S, _23), MAKE_TUPLE_ARG(_S, _24), MAKE_TUPLE_ARG(_S, _25), MAKE_TUPLE_ARG(_S, _26), MAKE_TUPLE_ARG(_S, _27), MAKE_TUPLE_ARG(_S, _28), MAKE_TUPLE_ARG(_S, _29), MAKE_TUPLE_ARG(_S, _30)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _31), MAKE_TUPLE_ARG(_S, _32), MAKE_TUPLE_ARG(_S, _33), MAKE_TUPLE_ARG(_S, _34), MAKE_TUPLE_ARG(_S, _35), MAKE_TUPLE_ARG(_S, _36), MAKE_TUPLE_ARG(_S, _37), MAKE_TUPLE_ARG(_S, _38), MAKE_TUPLE_ARG(_S, _39), MAKE_TUPLE_ARG(_S, _40)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _41), MAKE_TUPLE_ARG(_S, _42), MAKE_TUPLE_ARG(_S, _43), MAKE_TUPLE_ARG(_S, _44), MAKE_TUPLE_ARG(_S, _45), MAKE_TUPLE_ARG(_S, _46), MAKE_TUPLE_ARG(_S, _47), MAKE_TUPLE_ARG(_S, _48), MAKE_TUPLE_ARG(_S, _49), MAKE_TUPLE_ARG(_S, _50)) )
+
+#define MAKE_N60_TUPLE(_S, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, \
+	_11, _12, _13, _14, _15, _16, _17, _18, _19, _20, \
+	_21, _22, _23, _24, _25, _26, _27, _28, _29, _30, \
+	_31, _32, _33, _34, _35, _36, _37, _38, _39, _40, \
+	_41, _42, _43, _44, _45, _46, _47, _48, _49, _50, \
+	_51, _52, _53, _54, _55, _56, _57, _58, _59, _60, ...) \
+	std::make_tuple( \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _1), MAKE_TUPLE_ARG(_S, _2), MAKE_TUPLE_ARG(_S, _3), MAKE_TUPLE_ARG(_S, _4), MAKE_TUPLE_ARG(_S, _5), MAKE_TUPLE_ARG(_S, _6), MAKE_TUPLE_ARG(_S, _7), MAKE_TUPLE_ARG(_S, _8), MAKE_TUPLE_ARG(_S, _9), MAKE_TUPLE_ARG(_S, _10)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _11), MAKE_TUPLE_ARG(_S, _12), MAKE_TUPLE_ARG(_S, _13), MAKE_TUPLE_ARG(_S, _14), MAKE_TUPLE_ARG(_S, _15), MAKE_TUPLE_ARG(_S, _16), MAKE_TUPLE_ARG(_S, _17), MAKE_TUPLE_ARG(_S, _18), MAKE_TUPLE_ARG(_S, _19), MAKE_TUPLE_ARG(_S, _20)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _21), MAKE_TUPLE_ARG(_S, _22), MAKE_TUPLE_ARG(_S, _23), MAKE_TUPLE_ARG(_S, _24), MAKE_TUPLE_ARG(_S, _25), MAKE_TUPLE_ARG(_S, _26), MAKE_TUPLE_ARG(_S, _27), MAKE_TUPLE_ARG(_S, _28), MAKE_TUPLE_ARG(_S, _29), MAKE_TUPLE_ARG(_S, _30)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _31), MAKE_TUPLE_ARG(_S, _32), MAKE_TUPLE_ARG(_S, _33), MAKE_TUPLE_ARG(_S, _34), MAKE_TUPLE_ARG(_S, _35), MAKE_TUPLE_ARG(_S, _36), MAKE_TUPLE_ARG(_S, _37), MAKE_TUPLE_ARG(_S, _38), MAKE_TUPLE_ARG(_S, _39), MAKE_TUPLE_ARG(_S, _40)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _41), MAKE_TUPLE_ARG(_S, _42), MAKE_TUPLE_ARG(_S, _43), MAKE_TUPLE_ARG(_S, _44), MAKE_TUPLE_ARG(_S, _45), MAKE_TUPLE_ARG(_S, _46), MAKE_TUPLE_ARG(_S, _47), MAKE_TUPLE_ARG(_S, _48), MAKE_TUPLE_ARG(_S, _49), MAKE_TUPLE_ARG(_S, _50)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _51), MAKE_TUPLE_ARG(_S, _52), MAKE_TUPLE_ARG(_S, _53), MAKE_TUPLE_ARG(_S, _54), MAKE_TUPLE_ARG(_S, _55), MAKE_TUPLE_ARG(_S, _56), MAKE_TUPLE_ARG(_S, _57), MAKE_TUPLE_ARG(_S, _58), MAKE_TUPLE_ARG(_S, _59), MAKE_TUPLE_ARG(_S, _60)) )
+
+#define MAKE_N70_TUPLE(_S, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, \
+	_11, _12, _13, _14, _15, _16, _17, _18, _19, _20, \
+	_21, _22, _23, _24, _25, _26, _27, _28, _29, _30, \
+	_31, _32, _33, _34, _35, _36, _37, _38, _39, _40, \
+	_41, _42, _43, _44, _45, _46, _47, _48, _49, _50, \
+	_51, _52, _53, _54, _55, _56, _57, _58, _59, _60, \
+	_61, _62, _63, _64, _65, _66, _67, _68, _69, _70, ...) \
+	std::make_tuple( \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _1), MAKE_TUPLE_ARG(_S, _2), MAKE_TUPLE_ARG(_S, _3), MAKE_TUPLE_ARG(_S, _4), MAKE_TUPLE_ARG(_S, _5), MAKE_TUPLE_ARG(_S, _6), MAKE_TUPLE_ARG(_S, _7), MAKE_TUPLE_ARG(_S, _8), MAKE_TUPLE_ARG(_S, _9), MAKE_TUPLE_ARG(_S, _10)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _11), MAKE_TUPLE_ARG(_S, _12), MAKE_TUPLE_ARG(_S, _13), MAKE_TUPLE_ARG(_S, _14), MAKE_TUPLE_ARG(_S, _15), MAKE_TUPLE_ARG(_S, _16), MAKE_TUPLE_ARG(_S, _17), MAKE_TUPLE_ARG(_S, _18), MAKE_TUPLE_ARG(_S, _19), MAKE_TUPLE_ARG(_S, _20)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _21), MAKE_TUPLE_ARG(_S, _22), MAKE_TUPLE_ARG(_S, _23), MAKE_TUPLE_ARG(_S, _24), MAKE_TUPLE_ARG(_S, _25), MAKE_TUPLE_ARG(_S, _26), MAKE_TUPLE_ARG(_S, _27), MAKE_TUPLE_ARG(_S, _28), MAKE_TUPLE_ARG(_S, _29), MAKE_TUPLE_ARG(_S, _30)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _31), MAKE_TUPLE_ARG(_S, _32), MAKE_TUPLE_ARG(_S, _33), MAKE_TUPLE_ARG(_S, _34), MAKE_TUPLE_ARG(_S, _35), MAKE_TUPLE_ARG(_S, _36), MAKE_TUPLE_ARG(_S, _37), MAKE_TUPLE_ARG(_S, _38), MAKE_TUPLE_ARG(_S, _39), MAKE_TUPLE_ARG(_S, _40)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _41), MAKE_TUPLE_ARG(_S, _42), MAKE_TUPLE_ARG(_S, _43), MAKE_TUPLE_ARG(_S, _44), MAKE_TUPLE_ARG(_S, _45), MAKE_TUPLE_ARG(_S, _46), MAKE_TUPLE_ARG(_S, _47), MAKE_TUPLE_ARG(_S, _48), MAKE_TUPLE_ARG(_S, _49), MAKE_TUPLE_ARG(_S, _50)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _51), MAKE_TUPLE_ARG(_S, _52), MAKE_TUPLE_ARG(_S, _53), MAKE_TUPLE_ARG(_S, _54), MAKE_TUPLE_ARG(_S, _55), MAKE_TUPLE_ARG(_S, _56), MAKE_TUPLE_ARG(_S, _57), MAKE_TUPLE_ARG(_S, _58), MAKE_TUPLE_ARG(_S, _59), MAKE_TUPLE_ARG(_S, _60)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _61), MAKE_TUPLE_ARG(_S, _62), MAKE_TUPLE_ARG(_S, _63), MAKE_TUPLE_ARG(_S, _64), MAKE_TUPLE_ARG(_S, _65), MAKE_TUPLE_ARG(_S, _66), MAKE_TUPLE_ARG(_S, _67), MAKE_TUPLE_ARG(_S, _68), MAKE_TUPLE_ARG(_S, _69), MAKE_TUPLE_ARG(_S, _70)) )
+
+#define MAKE_N80_TUPLE(_S, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, \
+	_11, _12, _13, _14, _15, _16, _17, _18, _19, _20, \
+	_21, _22, _23, _24, _25, _26, _27, _28, _29, _30, \
+	_31, _32, _33, _34, _35, _36, _37, _38, _39, _40, \
+	_41, _42, _43, _44, _45, _46, _47, _48, _49, _50, \
+	_51, _52, _53, _54, _55, _56, _57, _58, _59, _60, \
+	_61, _62, _63, _64, _65, _66, _67, _68, _69, _70, \
+	_71, _72, _73, _74, _75, _76, _77, _78, _79, _80, ...) \
+	std::make_tuple( \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _1), MAKE_TUPLE_ARG(_S, _2), MAKE_TUPLE_ARG(_S, _3), MAKE_TUPLE_ARG(_S, _4), MAKE_TUPLE_ARG(_S, _5), MAKE_TUPLE_ARG(_S, _6), MAKE_TUPLE_ARG(_S, _7), MAKE_TUPLE_ARG(_S, _8), MAKE_TUPLE_ARG(_S, _9), MAKE_TUPLE_ARG(_S, _10)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _11), MAKE_TUPLE_ARG(_S, _12), MAKE_TUPLE_ARG(_S, _13), MAKE_TUPLE_ARG(_S, _14), MAKE_TUPLE_ARG(_S, _15), MAKE_TUPLE_ARG(_S, _16), MAKE_TUPLE_ARG(_S, _17), MAKE_TUPLE_ARG(_S, _18), MAKE_TUPLE_ARG(_S, _19), MAKE_TUPLE_ARG(_S, _20)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _21), MAKE_TUPLE_ARG(_S, _22), MAKE_TUPLE_ARG(_S, _23), MAKE_TUPLE_ARG(_S, _24), MAKE_TUPLE_ARG(_S, _25), MAKE_TUPLE_ARG(_S, _26), MAKE_TUPLE_ARG(_S, _27), MAKE_TUPLE_ARG(_S, _28), MAKE_TUPLE_ARG(_S, _29), MAKE_TUPLE_ARG(_S, _30)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _31), MAKE_TUPLE_ARG(_S, _32), MAKE_TUPLE_ARG(_S, _33), MAKE_TUPLE_ARG(_S, _34), MAKE_TUPLE_ARG(_S, _35), MAKE_TUPLE_ARG(_S, _36), MAKE_TUPLE_ARG(_S, _37), MAKE_TUPLE_ARG(_S, _38), MAKE_TUPLE_ARG(_S, _39), MAKE_TUPLE_ARG(_S, _40)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _41), MAKE_TUPLE_ARG(_S, _42), MAKE_TUPLE_ARG(_S, _43), MAKE_TUPLE_ARG(_S, _44), MAKE_TUPLE_ARG(_S, _45), MAKE_TUPLE_ARG(_S, _46), MAKE_TUPLE_ARG(_S, _47), MAKE_TUPLE_ARG(_S, _48), MAKE_TUPLE_ARG(_S, _49), MAKE_TUPLE_ARG(_S, _50)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _51), MAKE_TUPLE_ARG(_S, _52), MAKE_TUPLE_ARG(_S, _53), MAKE_TUPLE_ARG(_S, _54), MAKE_TUPLE_ARG(_S, _55), MAKE_TUPLE_ARG(_S, _56), MAKE_TUPLE_ARG(_S, _57), MAKE_TUPLE_ARG(_S, _58), MAKE_TUPLE_ARG(_S, _59), MAKE_TUPLE_ARG(_S, _60)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _61), MAKE_TUPLE_ARG(_S, _62), MAKE_TUPLE_ARG(_S, _63), MAKE_TUPLE_ARG(_S, _64), MAKE_TUPLE_ARG(_S, _65), MAKE_TUPLE_ARG(_S, _66), MAKE_TUPLE_ARG(_S, _67), MAKE_TUPLE_ARG(_S, _68), MAKE_TUPLE_ARG(_S, _69), MAKE_TUPLE_ARG(_S, _70)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _71), MAKE_TUPLE_ARG(_S, _72), MAKE_TUPLE_ARG(_S, _73), MAKE_TUPLE_ARG(_S, _74), MAKE_TUPLE_ARG(_S, _75), MAKE_TUPLE_ARG(_S, _76), MAKE_TUPLE_ARG(_S, _77), MAKE_TUPLE_ARG(_S, _78), MAKE_TUPLE_ARG(_S, _79), MAKE_TUPLE_ARG(_S, _80)) )
+
+#define MAKE_N90_TUPLE(_S, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, \
+	_11, _12, _13, _14, _15, _16, _17, _18, _19, _20, \
+	_21, _22, _23, _24, _25, _26, _27, _28, _29, _30, \
+	_31, _32, _33, _34, _35, _36, _37, _38, _39, _40, \
+	_41, _42, _43, _44, _45, _46, _47, _48, _49, _50, \
+	_51, _52, _53, _54, _55, _56, _57, _58, _59, _60, \
+	_61, _62, _63, _64, _65, _66, _67, _68, _69, _70, \
+	_71, _72, _73, _74, _75, _76, _77, _78, _79, _80, \
+	_81, _82, _83, _84, _85, _86, _87, _88, _89, _90, ...) \
+	std::make_tuple( \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _1), MAKE_TUPLE_ARG(_S, _2), MAKE_TUPLE_ARG(_S, _3), MAKE_TUPLE_ARG(_S, _4), MAKE_TUPLE_ARG(_S, _5), MAKE_TUPLE_ARG(_S, _6), MAKE_TUPLE_ARG(_S, _7), MAKE_TUPLE_ARG(_S, _8), MAKE_TUPLE_ARG(_S, _9), MAKE_TUPLE_ARG(_S, _10)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _11), MAKE_TUPLE_ARG(_S, _12), MAKE_TUPLE_ARG(_S, _13), MAKE_TUPLE_ARG(_S, _14), MAKE_TUPLE_ARG(_S, _15), MAKE_TUPLE_ARG(_S, _16), MAKE_TUPLE_ARG(_S, _17), MAKE_TUPLE_ARG(_S, _18), MAKE_TUPLE_ARG(_S, _19), MAKE_TUPLE_ARG(_S, _20)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _21), MAKE_TUPLE_ARG(_S, _22), MAKE_TUPLE_ARG(_S, _23), MAKE_TUPLE_ARG(_S, _24), MAKE_TUPLE_ARG(_S, _25), MAKE_TUPLE_ARG(_S, _26), MAKE_TUPLE_ARG(_S, _27), MAKE_TUPLE_ARG(_S, _28), MAKE_TUPLE_ARG(_S, _29), MAKE_TUPLE_ARG(_S, _30)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _31), MAKE_TUPLE_ARG(_S, _32), MAKE_TUPLE_ARG(_S, _33), MAKE_TUPLE_ARG(_S, _34), MAKE_TUPLE_ARG(_S, _35), MAKE_TUPLE_ARG(_S, _36), MAKE_TUPLE_ARG(_S, _37), MAKE_TUPLE_ARG(_S, _38), MAKE_TUPLE_ARG(_S, _39), MAKE_TUPLE_ARG(_S, _40)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _41), MAKE_TUPLE_ARG(_S, _42), MAKE_TUPLE_ARG(_S, _43), MAKE_TUPLE_ARG(_S, _44), MAKE_TUPLE_ARG(_S, _45), MAKE_TUPLE_ARG(_S, _46), MAKE_TUPLE_ARG(_S, _47), MAKE_TUPLE_ARG(_S, _48), MAKE_TUPLE_ARG(_S, _49), MAKE_TUPLE_ARG(_S, _50)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _51), MAKE_TUPLE_ARG(_S, _52), MAKE_TUPLE_ARG(_S, _53), MAKE_TUPLE_ARG(_S, _54), MAKE_TUPLE_ARG(_S, _55), MAKE_TUPLE_ARG(_S, _56), MAKE_TUPLE_ARG(_S, _57), MAKE_TUPLE_ARG(_S, _58), MAKE_TUPLE_ARG(_S, _59), MAKE_TUPLE_ARG(_S, _60)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _61), MAKE_TUPLE_ARG(_S, _62), MAKE_TUPLE_ARG(_S, _63), MAKE_TUPLE_ARG(_S, _64), MAKE_TUPLE_ARG(_S, _65), MAKE_TUPLE_ARG(_S, _66), MAKE_TUPLE_ARG(_S, _67), MAKE_TUPLE_ARG(_S, _68), MAKE_TUPLE_ARG(_S, _69), MAKE_TUPLE_ARG(_S, _70)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _71), MAKE_TUPLE_ARG(_S, _72), MAKE_TUPLE_ARG(_S, _73), MAKE_TUPLE_ARG(_S, _74), MAKE_TUPLE_ARG(_S, _75), MAKE_TUPLE_ARG(_S, _76), MAKE_TUPLE_ARG(_S, _77), MAKE_TUPLE_ARG(_S, _78), MAKE_TUPLE_ARG(_S, _79), MAKE_TUPLE_ARG(_S, _80)), \
+	std::make_tuple(MAKE_TUPLE_ARG(_S, _81), MAKE_TUPLE_ARG(_S, _82), MAKE_TUPLE_ARG(_S, _83), MAKE_TUPLE_ARG(_S, _84), MAKE_TUPLE_ARG(_S, _85), MAKE_TUPLE_ARG(_S, _86), MAKE_TUPLE_ARG(_S, _87), MAKE_TUPLE_ARG(_S, _88), MAKE_TUPLE_ARG(_S, _89), MAKE_TUPLE_ARG(_S, _90)) )
+
 #define MAKE_N100_TUPLE(_S, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, \
 	_11, _12, _13, _14, _15, _16, _17, _18, _19, _20, \
 	_21, _22, _23, _24, _25, _26, _27, _28, _29, _30, \
@@ -234,8 +342,129 @@ namespace dage {
 	std::make_tuple(MAKE_TUPLE_ARG(_S, _81), MAKE_TUPLE_ARG(_S, _82), MAKE_TUPLE_ARG(_S, _83), MAKE_TUPLE_ARG(_S, _84), MAKE_TUPLE_ARG(_S, _85), MAKE_TUPLE_ARG(_S, _86), MAKE_TUPLE_ARG(_S, _87), MAKE_TUPLE_ARG(_S, _88), MAKE_TUPLE_ARG(_S, _89), MAKE_TUPLE_ARG(_S, _90)), \
 	std::make_tuple(MAKE_TUPLE_ARG(_S, _91), MAKE_TUPLE_ARG(_S, _92), MAKE_TUPLE_ARG(_S, _93), MAKE_TUPLE_ARG(_S, _94), MAKE_TUPLE_ARG(_S, _95), MAKE_TUPLE_ARG(_S, _96), MAKE_TUPLE_ARG(_S, _97), MAKE_TUPLE_ARG(_S, _98), MAKE_TUPLE_ARG(_S, _99), MAKE_TUPLE_ARG(_S, _100)) )
 
-#define MAKE_TUPLE_IMPL(_S, ...)	MARCO_EXPAND(MAKE_N100_TUPLE(_S, __VA_ARGS__))
-#define MAKE_TUPLES(_S, ...)		MAKE_TUPLE_IMPL(_S, __VA_ARGS__, ARG_100_NIL())
+#define MAKE_N1_TUPLE(_S, _1, ...) \
+	std::make_tuple(std::make_tuple(MAKE_TUPLE_ARG(_S, _1)) )
+#define MAKE_N2_TUPLE(_S, _1, _2, ...) \
+	std::make_tuple(std::make_tuple(MAKE_TUPLE_ARG(_S, _1), MAKE_TUPLE_ARG(_S, _2)) )
+#define MAKE_N3_TUPLE(_S, _1, _2, _3, ...) \
+	std::make_tuple(std::make_tuple(MAKE_TUPLE_ARG(_S, _1), MAKE_TUPLE_ARG(_S, _2), MAKE_TUPLE_ARG(_S, _3)) )
+#define MAKE_N4_TUPLE(_S, _1, _2, _3, _4, ...) \
+	std::make_tuple(std::make_tuple(MAKE_TUPLE_ARG(_S, _1), MAKE_TUPLE_ARG(_S, _2), MAKE_TUPLE_ARG(_S, _3), MAKE_TUPLE_ARG(_S, _4)) )
+#define MAKE_N5_TUPLE(_S, _1, _2, _3, _4, _5, ...) \
+	std::make_tuple(std::make_tuple(MAKE_TUPLE_ARG(_S, _1), MAKE_TUPLE_ARG(_S, _2), MAKE_TUPLE_ARG(_S, _3), MAKE_TUPLE_ARG(_S, _4), MAKE_TUPLE_ARG(_S, _5)) )
+#define MAKE_N6_TUPLE(_S, _1, _2, _3, _4, _5, _6, ...) \
+	std::make_tuple(std::make_tuple(MAKE_TUPLE_ARG(_S, _1), MAKE_TUPLE_ARG(_S, _2), MAKE_TUPLE_ARG(_S, _3), MAKE_TUPLE_ARG(_S, _4), MAKE_TUPLE_ARG(_S, _5), MAKE_TUPLE_ARG(_S, _6)) )
+#define MAKE_N7_TUPLE(_S, _1, _2, _3, _4, _5, _6, _7, ...) \
+	std::make_tuple(std::make_tuple(MAKE_TUPLE_ARG(_S, _1), MAKE_TUPLE_ARG(_S, _2), MAKE_TUPLE_ARG(_S, _3), MAKE_TUPLE_ARG(_S, _4), MAKE_TUPLE_ARG(_S, _5), MAKE_TUPLE_ARG(_S, _6), MAKE_TUPLE_ARG(_S, _7)) )
+#define MAKE_N8_TUPLE(_S, _1, _2, _3, _4, _5, _6, _7, _8, ...) \
+	std::make_tuple(std::make_tuple(MAKE_TUPLE_ARG(_S, _1), MAKE_TUPLE_ARG(_S, _2), MAKE_TUPLE_ARG(_S, _3), MAKE_TUPLE_ARG(_S, _4), MAKE_TUPLE_ARG(_S, _5), MAKE_TUPLE_ARG(_S, _6), MAKE_TUPLE_ARG(_S, _7), MAKE_TUPLE_ARG(_S, _8)) )
+#define MAKE_N9_TUPLE(_S, _1, _2, _3, _4, _5, _6, _7, _8, _9, ...) \
+	std::make_tuple(std::make_tuple(MAKE_TUPLE_ARG(_S, _1), MAKE_TUPLE_ARG(_S, _2), MAKE_TUPLE_ARG(_S, _3), MAKE_TUPLE_ARG(_S, _4), MAKE_TUPLE_ARG(_S, _5), MAKE_TUPLE_ARG(_S, _6), MAKE_TUPLE_ARG(_S, _7), MAKE_TUPLE_ARG(_S, _8), MAKE_TUPLE_ARG(_S, _9)) )
+
+#define MAKE_TUPLE_0(_S, ...) std::make_tuple()
+#define MAKE_TUPLE_1(_S, ...) MARCO_EXPAND(MAKE_N1_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_2(_S, ...) MARCO_EXPAND(MAKE_N2_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_3(_S, ...) MARCO_EXPAND(MAKE_N3_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_4(_S, ...) MARCO_EXPAND(MAKE_N4_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_5(_S, ...) MARCO_EXPAND(MAKE_N5_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_6(_S, ...) MARCO_EXPAND(MAKE_N6_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_7(_S, ...) MARCO_EXPAND(MAKE_N7_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_8(_S, ...) MARCO_EXPAND(MAKE_N8_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_9(_S, ...) MARCO_EXPAND(MAKE_N9_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_10(_S, ...) MARCO_EXPAND(MAKE_N10_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_11(_S, ...) MARCO_EXPAND(MAKE_N20_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_12(_S, ...) MARCO_EXPAND(MAKE_N20_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_13(_S, ...) MARCO_EXPAND(MAKE_N20_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_14(_S, ...) MARCO_EXPAND(MAKE_N20_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_15(_S, ...) MARCO_EXPAND(MAKE_N20_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_16(_S, ...) MARCO_EXPAND(MAKE_N20_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_17(_S, ...) MARCO_EXPAND(MAKE_N20_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_18(_S, ...) MARCO_EXPAND(MAKE_N20_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_19(_S, ...) MARCO_EXPAND(MAKE_N20_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_20(_S, ...) MARCO_EXPAND(MAKE_N20_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_21(_S, ...) MARCO_EXPAND(MAKE_N30_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_22(_S, ...) MARCO_EXPAND(MAKE_N30_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_23(_S, ...) MARCO_EXPAND(MAKE_N30_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_24(_S, ...) MARCO_EXPAND(MAKE_N30_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_25(_S, ...) MARCO_EXPAND(MAKE_N30_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_26(_S, ...) MARCO_EXPAND(MAKE_N30_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_27(_S, ...) MARCO_EXPAND(MAKE_N30_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_28(_S, ...) MARCO_EXPAND(MAKE_N30_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_29(_S, ...) MARCO_EXPAND(MAKE_N30_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_30(_S, ...) MARCO_EXPAND(MAKE_N30_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_31(_S, ...) MARCO_EXPAND(MAKE_N40_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_32(_S, ...) MARCO_EXPAND(MAKE_N40_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_33(_S, ...) MARCO_EXPAND(MAKE_N40_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_34(_S, ...) MARCO_EXPAND(MAKE_N40_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_35(_S, ...) MARCO_EXPAND(MAKE_N40_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_36(_S, ...) MARCO_EXPAND(MAKE_N40_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_37(_S, ...) MARCO_EXPAND(MAKE_N40_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_38(_S, ...) MARCO_EXPAND(MAKE_N40_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_39(_S, ...) MARCO_EXPAND(MAKE_N40_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_40(_S, ...) MARCO_EXPAND(MAKE_N40_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_41(_S, ...) MARCO_EXPAND(MAKE_N50_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_42(_S, ...) MARCO_EXPAND(MAKE_N50_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_43(_S, ...) MARCO_EXPAND(MAKE_N50_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_44(_S, ...) MARCO_EXPAND(MAKE_N50_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_45(_S, ...) MARCO_EXPAND(MAKE_N50_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_46(_S, ...) MARCO_EXPAND(MAKE_N50_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_47(_S, ...) MARCO_EXPAND(MAKE_N50_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_48(_S, ...) MARCO_EXPAND(MAKE_N50_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_49(_S, ...) MARCO_EXPAND(MAKE_N50_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_50(_S, ...) MARCO_EXPAND(MAKE_N50_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_51(_S, ...) MARCO_EXPAND(MAKE_N60_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_52(_S, ...) MARCO_EXPAND(MAKE_N60_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_53(_S, ...) MARCO_EXPAND(MAKE_N60_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_54(_S, ...) MARCO_EXPAND(MAKE_N60_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_55(_S, ...) MARCO_EXPAND(MAKE_N60_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_56(_S, ...) MARCO_EXPAND(MAKE_N60_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_57(_S, ...) MARCO_EXPAND(MAKE_N60_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_58(_S, ...) MARCO_EXPAND(MAKE_N60_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_59(_S, ...) MARCO_EXPAND(MAKE_N60_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_60(_S, ...) MARCO_EXPAND(MAKE_N60_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_61(_S, ...) MARCO_EXPAND(MAKE_N70_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_62(_S, ...) MARCO_EXPAND(MAKE_N70_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_63(_S, ...) MARCO_EXPAND(MAKE_N70_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_64(_S, ...) MARCO_EXPAND(MAKE_N70_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_65(_S, ...) MARCO_EXPAND(MAKE_N70_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_66(_S, ...) MARCO_EXPAND(MAKE_N70_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_67(_S, ...) MARCO_EXPAND(MAKE_N70_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_68(_S, ...) MARCO_EXPAND(MAKE_N70_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_69(_S, ...) MARCO_EXPAND(MAKE_N70_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_70(_S, ...) MARCO_EXPAND(MAKE_N70_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_71(_S, ...) MARCO_EXPAND(MAKE_N80_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_72(_S, ...) MARCO_EXPAND(MAKE_N80_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_73(_S, ...) MARCO_EXPAND(MAKE_N80_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_74(_S, ...) MARCO_EXPAND(MAKE_N80_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_75(_S, ...) MARCO_EXPAND(MAKE_N80_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_76(_S, ...) MARCO_EXPAND(MAKE_N80_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_77(_S, ...) MARCO_EXPAND(MAKE_N80_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_78(_S, ...) MARCO_EXPAND(MAKE_N80_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_79(_S, ...) MARCO_EXPAND(MAKE_N80_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_80(_S, ...) MARCO_EXPAND(MAKE_N80_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_81(_S, ...) MARCO_EXPAND(MAKE_N90_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_82(_S, ...) MARCO_EXPAND(MAKE_N90_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_83(_S, ...) MARCO_EXPAND(MAKE_N90_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_84(_S, ...) MARCO_EXPAND(MAKE_N90_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_85(_S, ...) MARCO_EXPAND(MAKE_N90_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_86(_S, ...) MARCO_EXPAND(MAKE_N90_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_87(_S, ...) MARCO_EXPAND(MAKE_N90_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_88(_S, ...) MARCO_EXPAND(MAKE_N90_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_89(_S, ...) MARCO_EXPAND(MAKE_N90_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_90(_S, ...) MARCO_EXPAND(MAKE_N90_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_91(_S, ...) MARCO_EXPAND(MAKE_N100_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_92(_S, ...) MARCO_EXPAND(MAKE_N100_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_93(_S, ...) MARCO_EXPAND(MAKE_N100_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_94(_S, ...) MARCO_EXPAND(MAKE_N100_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_95(_S, ...) MARCO_EXPAND(MAKE_N100_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_96(_S, ...) MARCO_EXPAND(MAKE_N100_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_97(_S, ...) MARCO_EXPAND(MAKE_N100_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_98(_S, ...) MARCO_EXPAND(MAKE_N100_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_99(_S, ...) MARCO_EXPAND(MAKE_N100_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLE_100(_S, ...) MARCO_EXPAND(MAKE_N100_TUPLE(_S, __VA_ARGS__))
+
+#define MAKE_TUPLE_IMPL(_S, _N, ...)	MACRO_CONCAT(MAKE_TUPLE,_N)(_S, __VA_ARGS__) // MARCO_EXPAND(MAKE_N100_TUPLE(_S, __VA_ARGS__))
+#define MAKE_TUPLES(_S, _N, ...)		MAKE_TUPLE_IMPL(_S, _N, __VA_ARGS__, ARG_100_NIL())
 
 
 ///////////////////////////////// Reflection 接口定义 /////////////////////////////////////////
@@ -262,8 +491,11 @@ namespace dage {\
 #define REFLECTION_INNER(STRUCT_NAME, _N, TUP, ...) \
 	REFLECTION_IMPL(STRUCT_NAME, _N, TUP, MACRO_CONCAT(CON_STR, _N)(__VA_ARGS__))
 
+#define REFLECTION_ARGN(STRUCT_NAME, _N, ...) \
+	REFLECTION_INNER(STRUCT_NAME, _N, MAKE_TUPLES(STRUCT_NAME, _N, __VA_ARGS__), __VA_ARGS__)
+
 #define REFLECTION(STRUCT_NAME, ...) \
-	REFLECTION_INNER(STRUCT_NAME, GET_ARG_COUNT(__VA_ARGS__), MAKE_TUPLES(STRUCT_NAME, __VA_ARGS__), __VA_ARGS__)
+	REFLECTION_ARGN(STRUCT_NAME, GET_ARG_COUNT(__VA_ARGS__), MARCO_EXPAND(__VA_ARGS__))
 
 #define USING_REFLECTION void _MARK_DUM(){}
 
@@ -273,10 +505,10 @@ template <typename Tup, int I = 0, typename = void, typename = void>
 struct TupleExpand;
 
 template <typename Tup, int I>
-struct TupleExpand<Tup, I,
+struct TupleExpand<Tup, I, 
 	typename std::enable_if<std::tuple_size<Tup>::value == 0>::type> {
 		template <typename F>
-		static void apply_imp(const Tup& tup, F&& f) {}
+		static void apply_imp(const Tup& tup, F&& f, int seq=0) {}
 };
 
 template <typename Tup, int I>
@@ -286,20 +518,21 @@ struct TupleExpand<Tup, I,
 		typename std::tuple_element<I, Tup>::type
 		>::value >::type > {
 		template <typename F>
-		static void apply_imp(const Tup& tup, F&& f) { 
-			f(std::get<I>(tup), I); 
-			TupleExpand<Tup, I + 1>::apply_imp(tup, std::forward<F>(f)); 
+		static void apply_imp(const Tup& tup, F&& f, int seq=0) { 
+			f(std::get<I>(tup), seq); 
+			TupleExpand<Tup, I + 1>::apply_imp(tup, std::forward<F>(f), ++seq); 
 		}
 };
 template <typename Tup, int I>
-struct TupleExpand<Tup, I, 
+struct TupleExpand<Tup, I,
 	typename std::enable_if< I==std::tuple_size<Tup>::value-1 && true >::type,
 	typename std::enable_if< 1!=std::is_member_function_pointer<
 		typename std::tuple_element<I, Tup>::type
 		>::value >::type > {
 		template <typename F>
-		static void apply_imp(const Tup& tup, F&& f) { 
-			f(std::get<I>(tup), I); 
+		static void apply_imp(const Tup& tup, F&& f, int seq=0) { 
+			f(std::get<I>(tup), seq); 
+			seq++;
 		}
 };
 
@@ -311,16 +544,16 @@ struct TupleExpand<Tup, I,
 		typename std::tuple_element<I, Tup>::type
 		>::value >::type> {
 		template <typename F>
-		static void apply_imp(const Tup& tup, F&& f) {}
+		static void apply_imp(const Tup& tup, F&& f, int seq=0) {}
 };
 template <typename Tup, int I>
-struct TupleExpand<Tup, I, 
+struct TupleExpand<Tup, I,
 	typename std::enable_if< I==std::tuple_size<Tup>::value-1 && true >::type,
 	typename std::enable_if< 1==std::is_member_function_pointer<
 		typename std::tuple_element<I, Tup>::type
 		>::value >::type> {
 		template <typename F>
-		static void apply_imp(const Tup& tup, F&& f) {}
+		static void apply_imp(const Tup& tup, F&& f, int seq=0) {}
 };
 
 #define TS_DUMP_FIELDS \
@@ -399,7 +632,7 @@ template<typename T, typename S, typename OP>
 struct BridgeOStreamTs : TsBase<T, S> {
 	template <typename TUP>
 	inline void operator()(TUP&& tup, size_t idx) {
-		TupleExpand<typename std::remove_reference<TUP>::type>::apply_imp(tup, OP(this->obj, this->stream));
+		TupleExpand<typename std::remove_reference<TUP>::type>::apply_imp(tup, OP(this->obj, this->stream), idx*10);
 	}
 	BridgeOStreamTs(T& _obj, S& _stream) :TsBase<T,S>(_obj, _stream){}
 };
@@ -407,7 +640,7 @@ template<typename T, typename S, typename OP=InTsBase<T,S> >
 struct BridgeIStreamTs : TsBase<T, S> {
 	template <typename TUP>
 	inline void operator()(TUP&& tup, size_t idx) {
-		TupleExpand<typename std::remove_reference<TUP>::type>::apply_imp(tup, OP(this->obj, this->stream));
+		TupleExpand<typename std::remove_reference<TUP>::type>::apply_imp(tup, OP(this->obj, this->stream), idx*10);
 	}
 	BridgeIStreamTs(T& _obj, S& _stream) :TsBase<T,S>(_obj, _stream){}
 };
