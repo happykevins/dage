@@ -497,7 +497,7 @@ namespace dage {\
 #define REFLECTION(STRUCT_NAME, ...) \
 	REFLECTION_ARGN(STRUCT_NAME, GET_ARG_COUNT(__VA_ARGS__), MARCO_EXPAND(__VA_ARGS__))
 
-#define USING_REFLECTION void _MARK_DUM(){}
+#define USING_REFLECTION(STRUCT_NAME) inline void _MARK_DUM(){}; friend struct dage::meta_class<STRUCT_NAME>;
 
 ///////////////////////////////// Tuplesµü´úÆ÷ /////////////////////////////////////////
 
