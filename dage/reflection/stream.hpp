@@ -19,9 +19,9 @@ struct OStreamBinary;
 template<typename T, typename S>
 struct IStreamBinary;
 
-ISTREAM_BRIDGE(OStreamBinaryBridge, OStreamBinary);
+OSTREAM_BRIDGE(OStreamBinaryBridge, OStreamBinary);
 ISTREAM_BRIDGE(IStreamBinaryBridge, IStreamBinary);
-ISTREAM_BRIDGE(OStreamDumpInfoBridge, OutTsBase);
+OSTREAM_BRIDGE(OStreamDumpInfoBridge, OutTsBase);
 
 class Stream {
 public:
